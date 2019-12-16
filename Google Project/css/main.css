@@ -1,0 +1,56 @@
+.nav-bar{
+  padding-right: 5%;
+}
+.nav-container{
+  padding-top: 1%;
+}
+.nav-item{
+  display: block;
+}
+.app-container{
+  position: relative;
+  width: 30px;
+  height: 33px;
+}
+.app-icon{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  margin: auto;
+}
+
+.nav-text {
+  color: rgba(0,0,0,0.87);
+  font-size: 13px;
+}
+
+.main-body{
+  padding:8%;
+  display: block;
+}
+#search{
+  padding-top: 3%;
+}
+.search-box{
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+  box-sizing: border-box;
+  cursor: text;
+  font-size: 16px;
+  height: 44px;
+  margin: 0 auto;
+  max-width: 584px;
+  opacity: 1;
+  transition: none;
+}
+input.search{
+  height: 44px;
+  margin: 0 auto;
+  max-width: 100%;
+  border: 0px;
+}

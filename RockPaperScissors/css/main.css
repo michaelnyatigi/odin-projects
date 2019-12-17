@@ -1,0 +1,9 @@
+.row {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.block {
+    width: 100px;
+}

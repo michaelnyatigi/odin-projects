@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main role="main">
+        <div class="row">
+            <div class="block">You</div>
+            <div class="block">Computer</div>
+        </div>
+        <div class="row">
+            <div class="block" name="yScore">0</div>
+            <div class="block" name="cScore">0</div>
+        </div>
+        <div name="Human Option" class="row">
+            <div class="block" value="rock" onclick="gamePlay('rock')">Rock</div>
+            <div class="block" value="paper" onclick="gamePlay('paper')">Paper</div>
+            <div class="block" value="scissors" onclick="gamePlay('scissors')">Scissors</div>
+        </div>
+    </main>
+
+    <script>
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+        function gamePlay(hoption){
+            let options = ['rock','paper','scissors'] ;
+                options = shuffle(options);
+            let winner = false;
+            if('rock' == hoption && options[1] == 'scissors'){
+                winner = true;
+            } else if ('scissors' == hoption && options[1] == 'paper') {
+                winner = true;
+            } else if ('paper' == hoption && options[1] == 'rock') {
+                winner = true;
+            }
+            if(winner){
+                let score = Number(document.querySelector('div[name="yScore"]').innerText);
+                    score += 1;
+                    document.querySelector('div[name="yScore"]').textContent = score;
+            } else {
+                let score = Number(document.querySelector('div[name="cScore"]').innerText);
+                    score += 1;
+                    document.querySelector('div[name="cScore"]').textContent = score;
+            }
+            winningGame();
+        }
+
+        function winningGame(){
+            if(Number(document.querySelector('div[name="cScore"]').innerText) == 3){
+                document.querySelector('main').textContent = "You Lose";
+            } else if (Number(document.querySelector('div[name="yScore"]').innerText == 3)) {
+                document.querySelector('main').textContent = "Hurray You Win!";
+            }
+        }
+    </script>
+</body>
+</html>

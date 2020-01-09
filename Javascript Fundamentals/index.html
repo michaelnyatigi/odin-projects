@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Fundamentals</title>
+</head>
+<body>
+    <label name="weather">Select the weather type today: </label>
+    <select name="weather">
+        <option value="">> Make a Choice <</option>
+        <option value="sunny">Sunny</option>
+        <option value="rainy">Rainy</option>
+        <option value="snowing">Snowing</option>
+        <option value="overcast">Overcast</option>
+    </select>
+
+    <p name="option"></p>
+    <script>
+        let selectOption = document.querySelector('select[name="weather"]');
+        let optionTextSelector = document.querySelector('p[name="option"]');
+        selectOption.addEventListener('change',setWeather);
+        function setWeather() {
+            const choice = selectOption.value;
+            let message;
+            switch (choice) {
+                case 'sunny':
+                    message = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+                    break;
+                case 'rainy':
+                    message = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+                    break;
+                case 'snowing':
+                    message = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+                    break;
+                case 'overcast':
+                    message = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+                    break;
+            }
+            optionTextSelector.textContent = message;
+        }
+    </script>
+</body>
+</html>
